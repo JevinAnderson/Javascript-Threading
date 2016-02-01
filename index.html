@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Javascript Threading</title>
+</head>
+<body>
+<script src="Work.js"></script>
+<script src="Fibonacci.js"></script>
+<script type="text/javascript">
+  window.onload = (event)=> {
+    // const numbers = []
+    // for(i = 0; i <= 99; i++){
+    // for(i = 0; i <= 42; i++){
+    //   numbers.push(i);
+    // };
+    var numbers = [24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43];
+    var elements = numbers.map((number)=> {
+      const fibNumber = Fibonacci.learning(number);
+      const message = `Fibonacci ${number}: ${fibNumber}`;
+      const element = document.createElement('div');
+      element.innerHTML = message;
+
+      return element;
+    });
+
+    elements.forEach(element => document.body.appendChild(element));
+    // Work.iterative(numbers, 10);
+    // Work.recursive(numbers, 10);
+
+    numbers = [40, 40, 40, 40, 40, 40, 40, 40];
+    Work.iterative(numbers, 4);
+    Work.recursive(numbers, 4);
+  };
+
+</script>
+</body>
+</html>
